@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreenathji Seeds Farm - A Real Friend Of Farmer</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="seed-icon">
+                <i class="fas fa-seedling"></i>
+            </div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <a href="#home">
+                <img src="assets/images/logo.png" alt="Shreenathji Seeds Logo" class="logo-img">
+            </a></a>
+        </div>
+        
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#research">R & D</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div id="canvas-container"></div>
+            <div class="overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="animate-text">A Real Friend Of Farmer</h1>
+            <p class="animate-text">Providing quality seeds for sustainable farming since 1973</p>
+            <a href="products.php">
+                <button class="cta-button animate-text">Explore Our Seeds</button>
+              </a>
+              
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <div class="arrow">
+                <span>Scroll</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stat-container">
+            <div class="stat-item" data-count="45">
+                <div class="stat-number">0</div>
+                <div class="stat-label">VEGETABLE SEEDS</div>
+                <div class="stat-icon">
+                    <i class="fas fa-carrot"></i>
+                </div>
+            </div>
+            <div class="stat-item" data-count="15">
+                <div class="stat-number">0</div>
+                <div class="stat-label">FIELD CROP SEEDS</div>
+                <div class="stat-icon">
+                    <i class="fas fa-wheat-awn"></i>
+                </div>
+            </div>
+            <div class="stat-item" data-count="5">
+                <div class="stat-number">0</div>
+                <div class="stat-label">STATES</div>
+                <div class="stat-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+            </div>
+            <div class="stat-item" data-count="51">
+                <div class="stat-number">0</div>
+                <div class="stat-label">YEARS</div>
+                <div class="stat-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-header">
+            <h2>About Us</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Founded in 1973, Shreenathji Seeds Farm has been a trusted name in providing high-quality vegetable seeds for over 51 years. From a small family business, we have become a leader in the agricultural industry, dedicated to helping farmers achieve abundant, nutritious harvests through superior seeds and sustainable practices.</p>
+                <p>Our seeds are rigorously tested for quality and adaptability to Indian climates, ensuring optimal yields. We proudly offer a diverse range of eco-friendly, vegetarian seeds, supporting farmers of all scales. Rooted in tradition and innovation, we continue to uphold the values of quality, trust, and sustainability for a greener future.</p>
+                <button class="learn-more">Learn More</button>
+            </div>
+            <div class="about-image">
+                <div class="image-container">
+                    <img src="assets/images/About-img.png" alt="Shreenathji Seeds Farm" class="main-img">
+                    <div class="floating-elements">
+                        <div class="floating-seed seed-1"></div>
+                        <div class="floating-seed seed-2"></div>
+                        <div class="floating-seed seed-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+        <div class="section-header">
+            <h2>Our Range of Products</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="product-intro">
+            <p>Celebrating over 51 years of excellence in the agricultural industry, Shreenathji Seeds Farm has been a trusted name in cultivating and distributing high-quality seeds across India. Since our inception in 1973, we have been committed to empowering farmers with the best seeds for optimum yield and sustainable farming practices.</p>
+            <p>At Shreenathji Seeds Farm, we specialize in providing a wide variety of seeds, including <strong>45 premium vegetable seeds</strong> and <strong>15 top-quality field crop seeds</strong>. Our seeds are meticulously selected to ensure the highest purity, germination, and productivity. We pride ourselves on the success of our farmers and continue to innovate and provide solutions for sustainable agriculture.</p>
+        </div>
+        
+        <div class="product-categories">
+            <div class="category vegetable">
+                <div class="category-icon">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h3>Vegetable Seeds</h3>
+                <ul class="seed-list">
+                    <li>Tomato</li>
+                    <li>Chili</li>
+                    <li>Cucumber</li>
+                    <li>Okra</li>
+                    <li>Eggplant</li>
+                </ul>
+                <div class="view-all">View All Vegetable Seeds</div>
+            </div>
+            <div class="category field-crop">
+                <div class="category-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <h3>Field Crop Seeds</h3>
+                <ul class="seed-list">
+                    <li>Cotton</li>
+                    <li>Wheat</li>
+                    <li>Rice</li>
+                    <li>Maize</li>
+                    <li>Pulses</li>
+                </ul>
+                <div class="view-all">View All Field Crop Seeds</div>
+            </div>
+            <div class="category field-crop">
+                <div class="category-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <h3> F1 Kitchen Garden</h3>
+                <ul class="seed-list">
+                    <li>Cotton</li>
+                    <li>Wheat</li>
+                    <li>Rice</li>
+                    <li>Maize</li>
+                    <li>Pulses</li>
+                </ul>
+                <div class="view-all">View All Field F1 Kitchen Garden</div>
+            </div>
+        </div>
+        
+        <button class="product-button" onclick="window.location.href='products.php'">Our Products</button>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research">
+        <div class="section-header">
+            <h2>Research And Development</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="research-content">
+            <div class="research-image">
+                <img src="assets/images/R&D.png" alt="Research and Development" class="research-img">
+            </div>
+            <div class="research-text">
+                <p>At Shreenathji Seeds Farm, we believe that continuous innovation is the cornerstone of agricultural progress. Over the years, our Research & Development (R&D) division has been at the forefront of discovering and implementing new technologies to enhance seed quality, boost yields, and promote sustainable farming practices.</p>
+                <p>Our R&D efforts are focused on developing seeds that are not only high-yielding but also resilient to the challenges posed by changing climate conditions, diseases, and pests. We take pride in combining traditional wisdom with modern science to offer seeds that meet the evolving needs of farmers across India.</p>
+                <!-- <button class="know-more">Know More</button> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>Contact Us</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="info-box">
+                    <h3>Head Office</h3>
+                    <address>
+                        Nr.old Swaminarayan Temple,<br>
+                        Main Bazar, Dhari<br>
+                        Dist: Amreli, Gujarat
+                    </address>
+                </div>
+                <div class="info-box">
+                    <h3>Warehouse Address</h3>
+                    <address>
+                        Plot No.30, A one-industrial zone<br>
+                        Opp Jay industrial<br>
+                        Junagadh - Makhiyala road<br>
+                        Makhiyala, Junagadh
+                    </address>
+                </div>
+                <div class="info-box">
+                    <h3>Contact Details</h3>
+                    <p><i class="fas fa-phone"></i> +91 1234567890</p>
+                    <p><i class="fas fa-envelope"></i> info@shreenathji.com</p>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="input-group">
+                        <input type="text" id="name" required>
+                        <label for="name">Your Name</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" required>
+                        <label for="email">Your Email</label>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" id="phone" required>
+                        <label for="phone">Phone Number</label>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" required></textarea>
+                        <label for="message">Your Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .custom-message {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #4BB543;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+            font-size: 16px;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s ease-in-out;
+        }
+    
+        .custom-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+        .custom-message.error {
+            background-color: #e74c3c;
+        }
+    </style>
+    
+    <div id="messageBox" class="custom-message"></div>
+    
+    <script>
+        const contactForm = document.getElementById('contactForm');
+        const messageBox = document.getElementById('messageBox');
+    
+        function showMessage(text, isError = false) {
+            messageBox.textContent = text;
+            messageBox.classList.add('show');
+            if (isError) {
+                messageBox.classList.add('error');
+            } else {
+                messageBox.classList.remove('error');
+            }
+    
+            setTimeout(() => {
+                messageBox.classList.remove('show');
+            }, 4000);
+        }
+    
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+    
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const message = document.getElementById('message').value.trim();
+    
+                // Basic validation
+                if (!name || !email || !phone || !message) {
+                    showMessage('Please fill in all fields', true);
+                    return;
+                }
+    
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                const phoneRegex = /^\d{10}$/;
+    
+                if (!emailRegex.test(email)) {
+                    showMessage('Please enter a valid email address', true);
+                    return;
+                }
+    
+                if (!phoneRegex.test(phone)) {
+                    showMessage('Please enter a valid 10-digit phone number', true);
+                    return;
+                }
+    
+                // Send to Google Apps Script
+                fetch('https://script.google.com/macros/s/AKfycbzE255An5_Knfbn3Pz0NyaqZ6xmqgbERZumyJXQPF5L6b-0IaahlAmS9gY2za7jTucx1Q/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams({
+                        name,
+                        email,
+                        phone,
+                        message
+                    })
+                }).then(() => {
+                    showMessage('🎉 Thank you! Your message has been sent.');
+                    contactForm.reset();
+                }).catch((error) => {
+                    console.error('Error:', error);
+                    showMessage('Oops! Something went wrong. Try again later.', true);
+                });
+            });
+        }
+    </script>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <a href="#home">
+                    <img src="assets/images/logo.png" alt="Shreenathji Seeds Logo" class="footer-logo-img">
+                </a></a>
+                <p>A Real Friend Of Farmer</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#research">R & D</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fas fa-map-marker-alt" style="color: #f8b500;"></i> Main Bazar, Dhari, Dist: Amreli, Gujarat</p>
+                <p><i class="fas fa-phone" style="color: #f8b500;"></i> +91 9879394448</p>
+                <p><i class="fas fa-envelope" style="color: #f8b500;"></i> info@shreenathji.com</p>
+            </div>
+            
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/people/Shreenathji-vegetable-Seeds/61552541011064/?mibextid=LQQJ4d" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/shreenathji_seeds_farm/?igsh=MWo2c2k3dTN6N2w3Zw%3D%3D#" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <!-- <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a> -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Copyright © 2025 | Powered by <a href="https://shreenathijseedsfarm.com">shreenathijseedsfarm.com</a></p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

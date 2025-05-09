@@ -1,0 +1,17 @@
+{
+    "name": "abhay/sreenathji-seeds",
+    "autoload": {
+        "psr-4": {
+            "Abhay\\SreenathjiSeeds\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "abhay22048",
+            "email": "abhay.micradigital@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^4.2"
+    }
+}

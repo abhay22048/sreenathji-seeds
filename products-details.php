@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details - Shreenathji Seeds</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="stylesheet" href="assets/css/product-details.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <!-- Header Section -->
@@ -128,17 +131,9 @@
 
                 <div class="product-specifications">
                     <div class="spec-item">
-                    <span class="spec-name">વાવેતર સમય:</span>
+                    <!-- <span class="spec-name">વાવેતર સમય:</span> -->
                     <span class="spec-value"><?php echo $sowingTime; ?></span>
-                    </div>
-                    <div class="spec-item">
-                    <span class="spec-name">વાવણી અંતર:</span>
-                    <span class="spec-value"><?php echo $sowingDistance; ?></span>
-                    </div>
-                    <div class="spec-item">
-                    <span class="spec-name">જમીન:</span>
-                    <span class="spec-value"><?php echo $soilType; ?></span>
-                    </div>
+                    </div>                    
                 </div>
                 </div>
             </div>
@@ -149,53 +144,12 @@
         <section class="growing-guide" data-aos="fade-up">
             <div class="container">
             <h2>ઉછેર વિષે માહિતી</h2>
-            <div class="tabs">
-                <button class="tab-btn active" data-tab="planting">ખાતર</button>
-                <button class="tab-btn" data-tab="care">પાક સંરક્ષણ</button>
-                <button class="tab-btn" data-tab="harvesting">પિયત</button>
-                <button class="tab-btn" data-tab="note">ખુલાસો</button>
-            </div>
-            <div class="tab-content">
-                <div class="tab-pane active" id="planting">
-                <div class="content-wrapper">
-                    <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-icon">
-                        <i class="fas fa-seedling"></i>
-                        </div>
-                        <div class="timeline-content">
-                        <p><?php echo $fertilizerInfo; ?></p>
-                        </div>
-                    </div>                            
-                    </div>
-                </div>
-                </div>
-                <div class="tab-pane" id="care">
-                <div class="care-container">
-                    <div class="care-item">
-                    <div class="care-icon">
-                        <i class="fas fa-shield-virus"></i>
-                    </div>
-                    <p><?php echo $careInfo; ?></p>
-                    </div>
-                </div>
-                </div>
-                <div class="tab-pane" id="harvesting">
-                <div class="harvesting-content">
-                    <div class="harvesting-text">
-                    <p><?php echo $irrigationInfo; ?></p>
-                    </div>
-                </div>
-                </div>
-                <div class="tab-pane" id="note">
-                <div class="storage-content">
-                    <div class="storage-methods">
-                    <div class="storage-method">
-                        <i class="fas fa-exclamation-triangle"></i>
-                        <p><?php echo $note; ?></p>
-                    </div>
-                    </div>
-                </div>
+            <div class="combined-content">
+                <div class="content-wrapper" style="background-color: white; padding: 15px; border-radius: 8px;">
+                    <!-- <h3>Product Information</h3> -->
+                    <p>
+                         <?php echo $fertilizerInfo; ?><br>
+                    </p>
                 </div>
             </div>
             </div>
@@ -221,7 +175,7 @@
                       </a>
                       
 
-                    <p class="tagline">A Real Friend Of Farmer</p>
+                    <p class="tagline" style="font-family: 'Merienda', cursive; color:rgb(255, 255, 255);">A Real Friend Of Farmer</p>
                 </div>
                 <div class="footer-links">
                     <div class="footer-column">
@@ -256,8 +210,7 @@
                         <div class="social-links">
                             <a href="https://www.facebook.com/people/Shreenathji-vegetable-Seeds/61552541011064/?mibextid=LQQJ4d" class="social-icon" target="_blank"><i class="fab fa-facebook-f"></i></a>
                             <a href="https://www.instagram.com/shreenathji_seeds_farm/?igsh=MWo2c2k3dTN6N2w3Zw%3D%3D#" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
-                            <!-- <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-                            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a> -->
+
                         </div>
                     </div>
                 </div>

@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_product'])) {
             ],
         ];
 
-        $headerCells = ['A1', 'B1', 'C1', 'D1', 'E1', 'F1', 'G1', 'H1', 'I1', 'J1', 'K1', 'L1'];
+        $headerCells = ['A1', 'B1', 'C1', 'D1', 'E1', 'F1', 'I1'];
         foreach ($headerCells as $cell) {
             $sheet->getStyle($cell)->applyFromArray($headerStyleArray);
         }
@@ -46,12 +46,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_product'])) {
             $sheet->setCellValue('D1', 'Main Image');
             $sheet->setCellValue('E1', 'Description');
             $sheet->setCellValue('F1', 'Sowing Time');
-            $sheet->setCellValue('G1', 'Sowing Distance');
-            $sheet->setCellValue('H1', 'Soil Type');
+            // $sheet->setCellValue('G1', 'Sowing Distance');
+            // $sheet->setCellValue('H1', 'Soil Type');
             $sheet->setCellValue('I1', 'Fertilizer Info');
-            $sheet->setCellValue('J1', 'Care Info');
-            $sheet->setCellValue('K1', 'Irrigation Info');
-            $sheet->setCellValue('L1', 'Note');
+            // $sheet->setCellValue('J1', 'Care Info');
+            // $sheet->setCellValue('K1', 'Irrigation Info');
+            // $sheet->setCellValue('L1', 'Note'); "write this in header cless when add more fields 'J1', 'K1', 'L1'  ,  'G1', 'H1',"
         }
         // Skip the first column and start the product ID from column B
         $sheet->setCellValue('B1', 'ID');
@@ -60,12 +60,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_product'])) {
         $sheet->setCellValue('E1', 'Main Image');
         $sheet->setCellValue('F1', 'Description');
         $sheet->setCellValue('G1', 'Sowing Time');
-        $sheet->setCellValue('H1', 'Sowing Distance');
-        $sheet->setCellValue('I1', 'Soil Type');
+        // $sheet->setCellValue('H1', 'Sowing Distance');
+        // $sheet->setCellValue('I1', 'Soil Type');
         $sheet->setCellValue('J1', 'Fertilizer Info');
-        $sheet->setCellValue('K1', 'Care Info');
-        $sheet->setCellValue('L1', 'Irrigation Info');
-        $sheet->setCellValue('M1', 'Note');
+        // $sheet->setCellValue('K1', 'Care Info');
+        // $sheet->setCellValue('L1', 'Irrigation Info');
+        // $sheet->setCellValue('M1', 'Note');
         // Get the last row number
         $highestRow = $sheet->getHighestRow();
         $newId = $highestRow + 1; // Increment ID to avoid overwriting
@@ -75,12 +75,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_product'])) {
         $category = $_POST['category'] ?? '';
         $description = $_POST['description'] ?? '';
         $sowingTime = $_POST['sowing_time'] ?? '';
-        $sowingDistance = $_POST['sowing_distance'] ?? '';
-        $soilType = $_POST['soil_type'] ?? '';
+        // $sowingDistance = $_POST['sowing_distance'] ?? '';
+        // $soilType = $_POST['soil_type'] ?? '';
         $fertilizerInfo = $_POST['fertilizer_info'] ?? '';
-        $careInfo = $_POST['care_info'] ?? '';
-        $irrigationInfo = $_POST['irrigation_info'] ?? '';
-        $note = $_POST['note'] ?? '';
+        // $careInfo = $_POST['care_info'] ?? '';
+        // $irrigationInfo = $_POST['irrigation_info'] ?? '';
+        // $note = $_POST['note'] ?? '';
         
         // Handle image upload
         $mainImage = '';
@@ -89,22 +89,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_product'])) {
             
             // Create directory if it doesn't exist
             if (!file_exists($targetDir)) {
-                mkdir($targetDir, 0777, true);
+            mkdir($targetDir, 0777, true);
             }
             
-            // Generate unique filename
+            // Use the original filename
             $fileName = basename($_FILES["main_image"]["name"]);
             $targetFilePath = $targetDir . $fileName;
             $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
             
-            // Check if file already exists
-            if (file_exists($targetFilePath)) {
-                $fileName = time() . '_' . $fileName;
-                $targetFilePath = $targetDir . $fileName;
-            }
-            
             // Allow certain file formats
-            $allowTypes = array('jpg', 'png', 'jpeg', 'gif');
+            $allowTypes = array('jpg', 'png', 'jpeg', 'gif', 'webp');
             if (in_array(strtolower($fileType), $allowTypes)) {
                 // Upload file to server
                 if (move_uploaded_file($_FILES["main_image"]["tmp_name"], $targetFilePath)) {
@@ -114,11 +108,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_product'])) {
                     $messageType = "error";
                 }
             } else {
-                $message = "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                $message = "Sorry, only JPG, JPEG, PNG, GIF & WEBP files are allowed.";
                 $messageType = "error";
             }
         }
-        
         // Add new row to the sheet
         $sheet->setCellValue('A' . ($highestRow + 1), $newId);
         $sheet->setCellValue('B' . ($highestRow + 1), $productName);
@@ -126,12 +119,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_product'])) {
         $sheet->setCellValue('D' . ($highestRow + 1), $mainImage);
         $sheet->setCellValue('E' . ($highestRow + 1), $description);
         $sheet->setCellValue('F' . ($highestRow + 1), $sowingTime);
-        $sheet->setCellValue('G' . ($highestRow + 1), $sowingDistance);
-        $sheet->setCellValue('H' . ($highestRow + 1), $soilType);
+        // $sheet->setCellValue('G' . ($highestRow + 1), $sowingDistance);
+        // $sheet->setCellValue('H' . ($highestRow + 1), $soilType);
         $sheet->setCellValue('I' . ($highestRow + 1), $fertilizerInfo);
-        $sheet->setCellValue('J' . ($highestRow + 1), $careInfo);
-        $sheet->setCellValue('K' . ($highestRow + 1), $irrigationInfo);
-        $sheet->setCellValue('L' . ($highestRow + 1), $note);
+        // $sheet->setCellValue('J' . ($highestRow + 1), $careInfo);
+        // $sheet->setCellValue('K' . ($highestRow + 1), $irrigationInfo);
+        // $sheet->setCellValue('L' . ($highestRow + 1), $note);
         
         // Save the spreadsheet
         $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
@@ -179,6 +172,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product - Shreenathji Seeds Admin</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -404,39 +398,17 @@ try {
                             <h3>Growing Information</h3>
                             <div class="form-grid">
                                 <div class="form-group">
-                                    <label for="sowing_time">વાવેતર સમય (Sowing Time)*</label>
-                                    <input type="text" id="sowing_time" name="sowing_time" required>
+                                    <!-- <label for="sowing_time">વાવેતર સમય (Sowing Time)*</label> -->
+                                    <textarea id="sowing_time" name="sowing_time" rows="4" cols="50" required></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <label for="sowing_distance">વાવણી અંતર (Sowing Distance)*</label>
-                                    <input type="text" id="sowing_distance" name="sowing_distance" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="soil_type">જમીન (Soil Type)*</label>
-                                <input type="text" id="soil_type" name="soil_type" required>
-                            </div>
                         </div>
 
                         <div class="form-section">
                             <h3>Care Instructions</h3>
                             <div class="form-group">
-                                <label for="fertilizer_info">ખાતર (Fertilizer Info)*</label>
+                                <!-- <label for="fertilizer_info">ખાતર (Fertilizer Info)*</label> -->
                                 <textarea id="fertilizer_info" name="fertilizer_info" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="care_info">પાક સંરક્ષણ (Care Info)*</label>
-                                <textarea id="care_info" name="care_info" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="irrigation_info">પિયત (Irrigation Info)*</label>
-                                <textarea id="irrigation_info" name="irrigation_info" required></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="note">ખુલાસો (Note)</label>
-                                <textarea id="note" name="note"></textarea>
-                                <div class="form-help">Any additional notes or special instructions.</div>
-                            </div>
+                            </div>                            
                         </div>
 
                         <div class="form-actions">

@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Shreenathji Seeds</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="assets/css/products.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <!-- Header -->
@@ -35,7 +38,7 @@
     <!-- Products Banner -->
     <section class="banner">
         <div class="container">
-            <h1 class="animate__animated animate__fadeInUp">Our Products</h1>
+            <h1 class="animate__animated animate__fadeInUp" style="font-family: 'Merienda', cursive; color:rgb(255, 255, 255);">Our Products</h1>
             <div class="separator" data-aos="fade-up">
                 <span class="yellow-line"></span>
                 <span class="green-line"></span>
@@ -135,7 +138,7 @@
                         <img src="assets/images/logo.png" alt="Shreenathji Seeds Logo" class="footer-logo-img">
                       </a>
                       
-                <p>A Real Friend Of Farmer</p>
+                <p style="font-family: 'Merienda', cursive; color:rgb(255, 255, 255);">A Real Friend Of Farmer</p>
                 </div>
                 
                 <div class="quick-links">
@@ -161,8 +164,7 @@
                     <div class="social-icons" >
                         <a href="https://www.facebook.com/people/Shreenathji-vegetable-Seeds/61552541011064/?mibextid=LQQJ4d" target="_blank"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/shreenathji_seeds_farm/?igsh=MWo2c2k3dTN6N2w3Zw%3D%3D#" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <!-- <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                        
                     </div>
                 </div>
             </div>

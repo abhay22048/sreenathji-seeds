@@ -54,9 +54,9 @@ try {
                 'sowing_distance' => $row['G'],
                 'soil_type' => $row['H'],
                 'fertilizer_info' => $row['I'],
-                'care_info' => $row['J'],
-                'irrigation_info' => $row['K'],
-                'note' => $row['L']
+                // 'care_info' => $row['J'],
+                // 'irrigation_info' => $row['K'],
+                // 'note' => $row['L']
             ];
             $rowIndex = $index;
             break;
@@ -92,9 +92,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_product'])) {
         $sowingDistance = $_POST['sowing_distance'] ?? '';
         $soilType = $_POST['soil_type'] ?? '';
         $fertilizerInfo = $_POST['fertilizer_info'] ?? '';
-        $careInfo = $_POST['care_info'] ?? '';
-        $irrigationInfo = $_POST['irrigation_info'] ?? '';
-        $note = $_POST['note'] ?? '';
+        // $careInfo = $_POST['care_info'] ?? '';
+        // $irrigationInfo = $_POST['irrigation_info'] ?? '';
+        // $note = $_POST['note'] ?? '';
         
         // Handle image upload
         $mainImage = $productData['main_image']; // Default to existing image
@@ -147,9 +147,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_product'])) {
         $sheet->setCellValue('G' . $rowIndex, $sowingDistance);
         $sheet->setCellValue('H' . $rowIndex, $soilType);
         $sheet->setCellValue('I' . $rowIndex, $fertilizerInfo);
-        $sheet->setCellValue('J' . $rowIndex, $careInfo);
-        $sheet->setCellValue('K' . $rowIndex, $irrigationInfo);
-        $sheet->setCellValue('L' . $rowIndex, $note);
+        // $sheet->setCellValue('J' . $rowIndex, $careInfo);
+        // $sheet->setCellValue('K' . $rowIndex, $irrigationInfo);
+        // $sheet->setCellValue('L' . $rowIndex, $note);
         
         // Save the spreadsheet
         $writer = IOFactory::createWriter($spreadsheet, 'Xlsx');
@@ -173,9 +173,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_product'])) {
             'sowing_distance' => $sowingDistance,
             'soil_type' => $soilType,
             'fertilizer_info' => $fertilizerInfo,
-            'care_info' => $careInfo,
-            'irrigation_info' => $irrigationInfo,
-            'note' => $note
+            // 'care_info' => $careInfo,
+            // 'irrigation_info' => $irrigationInfo,
+            // 'note' => $note
         ];
         
     } catch (Exception $e) {
@@ -211,6 +211,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edit Product - Shreenathji Seeds Admin</title>
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
     <link rel="stylesheet" href="assets/css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -466,38 +467,16 @@ try {
                             <h3>Growing Information</h3>
                             <div class="form-grid">
                                 <div class="form-group">
-                                    <label for="sowing_time">વાવેતર સમય (Sowing Time)*</label>
-                                    <input type="text" id="sowing_time" name="sowing_time" value="<?= htmlspecialchars($productData['sowing_time']) ?>" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="sowing_distance">વાવણી અંતર (Sowing Distance)*</label>
-                                    <input type="text" id="sowing_distance" name="sowing_distance" value="<?= htmlspecialchars($productData['sowing_distance']) ?>" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="soil_type">જમીન (Soil Type)*</label>
-                                <input type="text" id="soil_type" name="soil_type" value="<?= htmlspecialchars($productData['soil_type']) ?>" required>
-                            </div>
+                                    <!-- <label for="sowing_time">વાવેતર સમય (Sowing Time)*</label> -->
+                                    <textarea id="sowing_time" name="sowing_time" required><?= htmlspecialchars($productData['sowing_time']) ?></textarea>
+                                </div>                               
                         </div>
 
                         <div class="form-section">
                             <h3>Care Instructions</h3>
                             <div class="form-group">
-                                <label for="fertilizer_info">ખાતર (Fertilizer Info)*</label>
+                                <!-- <label for="fertilizer_info">ખાતર (Fertilizer Info)*</label> -->
                                 <textarea id="fertilizer_info" name="fertilizer_info" required><?= htmlspecialchars($productData['fertilizer_info']) ?></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="care_info">પાક સંરક્ષણ (Care Info)*</label>
-                                <textarea id="care_info" name="care_info" required><?= htmlspecialchars($productData['care_info']) ?></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="irrigation_info">પિયત (Irrigation Info)*</label>
-                                <textarea id="irrigation_info" name="irrigation_info" required><?= htmlspecialchars($productData['irrigation_info']) ?></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="note">ખુલાસો (Note)</label>
-                                <textarea id="note" name="note"><?= htmlspecialchars($productData['note']) ?></textarea>
-                                <div class="form-help">Any additional notes or special instructions.</div>
                             </div>
                         </div>
 
